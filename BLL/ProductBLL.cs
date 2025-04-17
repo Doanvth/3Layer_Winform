@@ -1,4 +1,5 @@
 ﻿using DAL;
+using DAL.Models;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,12 @@ namespace BLL
         //}
 
         // cách viết rút gọn
-        public List<ProductDTO> GetAll() => dal.GetAllProducts();
-        public void Add(ProductDTO product) => dal.AddProduct(product);
+        //public List<ProductDTO> GetAll() => dal.GetAllProducts();
+
+        // cách viết linq 
+        public List<Product> GetAll() => dal.GetAllProducts();
+
+        public void Add(Product product) => dal.AddProduct(product);
         public void Update(ProductDTO product) => dal.UpdateProduct(product);
         public void Delete(int id) => dal.DeleteProduct(id);
     }
